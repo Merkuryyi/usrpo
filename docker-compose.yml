@@ -1,0 +1,26 @@
+﻿
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: 6645
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  webapi:
+    build: .
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Default: "Host=localhost;Database=test;Username=postgres;Password=6645"
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+    
+    
