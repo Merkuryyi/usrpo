@@ -7,7 +7,7 @@ public class Program
     public static NpgsqlConnection GetSqlConnection()
     {
         NpgsqlConnection conn =
-            new NpgsqlConnection("Host=localhost;Username=postgres;Password=62389trewq%Y;Database=new");
+            new NpgsqlConnection("Host=host.docker.internal;Username=postgres;Password=6645;Database=new");
         conn.Open();
         return conn;
     }
