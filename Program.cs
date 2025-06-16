@@ -7,7 +7,7 @@ public class Program
     public static NpgsqlConnection GetSqlConnection()
     {
         NpgsqlConnection conn =
-            new NpgsqlConnection("Host=localhost;Username=postgres;Password=6645;Database=test");
+            new NpgsqlConnection("Host=localhost;Username=postgres;Password=62389trewq%Y;Database=new");
         conn.Open();
         return conn;
     }
@@ -17,7 +17,7 @@ public class Program
         {
             using (var conn = GetSqlConnection())
             {
-                string query = @"SELECT * FROM text";
+                string query = @"SELECT * FROM achievement";
                 using (var command = new NpgsqlCommand(query, conn))
                 using (var reader = command.ExecuteReader()) 
                 {
@@ -41,7 +41,7 @@ public class Program
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Ошибка при авторизации пользователя: {ex.Message}");
+            Console.WriteLine($"Ошибка {ex.Message}");
         }
     }
 }

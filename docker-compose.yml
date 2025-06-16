@@ -14,7 +14,7 @@ services:
     build: .
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ConnectionStrings__Default: "Host=localhost;Database=test;Username=postgres;Password=6645"
+      ConnectionStrings__Default: "Host=localhost;Database=new;Username=postgres;Password=62389trewq%Y"
     ports:
       - "8080:80"
     depends_on:
